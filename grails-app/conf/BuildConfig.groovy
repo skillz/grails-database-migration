@@ -15,11 +15,9 @@ grails.project.dependency.resolution = {
 	inherits 'global'
 	log 'warn'
 
-	repositories {
-		mavenLocal()
-		grailsCentral()
-		mavenRepo "http://repo.grails.org/grails/core"
-	}
+    repositories {
+        mavenRepo name: 'Skillz Nexus Grails Repository', url: 'http://nexus.skillz.com/content/groups/grails'
+    }
 
 	dependencies {
 		compile('org.liquibase:liquibase-core:2.0.5') {
@@ -38,3 +36,7 @@ grails.project.dependency.resolution = {
 		}
 	}
 }
+
+grails.project.repos.snapshots.url = 'http://nexus.skillz.com/content/repositories/snapshots/'
+grails.project.repos.default = 'snapshots'
+grails.release.scm.enabled = false
